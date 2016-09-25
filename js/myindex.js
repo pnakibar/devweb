@@ -1,9 +1,7 @@
-
-Array.from(document.getElementsByClassName('info like')).forEach(e =>
+Array.from(document.getElementsByClassName('like-button')).forEach(e => {
   e.addEventListener('click', function () {
     if (!this.classList.contains('liked')) {
-      console.log('asd');
       this.classList.add('liked');
     }
   })
-)
+})

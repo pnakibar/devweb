@@ -9,6 +9,10 @@ body {
     margin-left: auto;
 }
 
+.liked {
+  color: #149c82;
+}
+
 .msg {
     padding: 5px;
     /* border-bottom: 1px solid #ddd; */
