@@ -9,6 +9,9 @@ body {
     margin-left: auto;
 }
 
+.like-button {
+  transition: color 300ms;
+}
 .liked {
   color: #149c82;
 }
