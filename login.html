@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Beerzeit</title>
+  <link rel="stylesheet" href="css/my.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+  <style type="text/css">
+    * {
+      text-shadow: transparent 0px 0px 0px, rgba(0, 0, 0, 0.68) 0px 0px 0px !important;
+    }
+  </style>
+</head>
+
+<body cz-shortcut-listen="true">
+  <script>
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+      ':35729/livereload.js?snipver=1"></' + 'script>')
+  </script>
+  <div class="background-image"></div>
+  <!-- Fixed navbar -->
+  <div class="container">
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info myborder">
+        <div class="myheading  myborder panel-heading">
+          <div class="panel-title">Login</div>
+          <div style="float:right; font-size: 80%; position: relative; top:-10px; "><a style="color: white;" href="#">Esqueceu a senha?</a></div>
+        </div>
+
+        <div style="padding-top:30px" class="panel-body">
+
+          <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+          <form id="loginform" class="form-horizontal" role="form">
+
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Usuário ou email">
+            </div>
+
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="login-password" type="password" class="form-control" name="password" placeholder="senha">
+            </div>
+
+
+
+            <div class="input-group">
+              <div class="checkbox">
+                <label>
+                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Lembrar-me
+                                        </label>
+              </div>
+            </div>
+
+
+            <div style="margin-top:10px" class="form-group">
+              <!-- Button -->
+
+              <div class="col-sm-12 controls">
+                <a id="btn-login" href="#" class="btn btn-success">Login</a>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                  Não tem uma conta?
+                  <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Registre-se aqui!
+                                        </a>
+                </div>
+              </div>
+            </div>
+          </form>
+
+
+
+        </div>
+      </div>
+    </div>
+    <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info myborder">
+        <div class="panel-heading myborder myheading">
+          <div class="panel-title">Registro</div>
+          <div style="float:right; font-size: 85%; position: relative; top:-10px"><a style="color: white;" id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Faça o login</a></div>
+        </div>
+        <div class="panel-body">
+          <form id="signupform" class="form-horizontal" role="form">
+
+            <div id="signupalert" style="display:none" class="alert alert-danger">
+              <p>Error:</p>
+              <span></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="col-md-3 control-label">Email</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" name="email" placeholder="Endereço de Email">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="firstname" class="col-md-3 control-label">Nome completo</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" name="firstname" placeholder="Nome completo">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="col-md-3 control-label">Senha</label>
+              <div class="col-md-9">
+                <input type="password" class="form-control" name="passwd" placeholder="Senha">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="col-md-3 control-label">Confirme a sua senha</label>
+              <div class="col-md-9">
+                <input type="password" class="form-control" name="passwd" placeholder="Confirme a sua senha">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="icode" class="col-md-3 control-label">Data de Nascimento</label>
+              <div class="col-md-9">
+                <input type="date" class="form-control" name="icode" placeholder="16/01/00">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <!-- Button -->
+              <div class="col-md-offset-3 col-md-9">
+                <button id="btn-signup" type="button" class="btn btn-success"><i class="icon-hand-right"></i> &nbsp Registrar</button>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+              <div class="col-md-offset-3 col-md-9">
+              </div>
+
+            </div>
+
+
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="./Theme Template for Bootstrap_files/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+  </script>
+</body>
+
+</html>
