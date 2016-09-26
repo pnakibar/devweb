@@ -1,6 +1,8 @@
 const listenToLike = (el) => {
   el.addEventListener('click', function () {
     if (!this.classList.contains('liked')) {
+      const newNumberOfLikes = new Number(el.textContent) + 1;
+      el.innerHTML = `${newNumberOfLikes} <i class="fa fa-thumbs-up" aria-hidden="true"></i>`;
       this.classList.add('liked');
     }
   })
@@ -39,7 +41,7 @@ Array.from(
         </h5>
           <small class="col-lg-10">${text}</small>
           <div class="col-lg-12 like-button">
-            0 <i class="fa fa-thumbs-up" aria-hidden="true"></i></i>
+            0 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
           </div>
         </div>
       </div>
