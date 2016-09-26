@@ -1,9 +1,15 @@
 const listenToLike = (el) => {
   el.addEventListener('click', function () {
+    const likesHTML = newNumberOfLikes => `${newNumberOfLikes} <i class="fa fa-thumbs-up" aria-hidden="true"></i>`
     if (!this.classList.contains('liked')) {
       const newNumberOfLikes = new Number(el.textContent) + 1;
-      el.innerHTML = `${newNumberOfLikes} <i class="fa fa-thumbs-up" aria-hidden="true"></i>`;
+      el.innerHTML = likesHTML(newNumberOfLikes);
       this.classList.add('liked');
+    }
+    else {
+      const newNumberOfLikes = new Number(el.textContent) - 1;
+      el.innerHTML = likesHTML(newNumberOfLikes);
+      this.classList.remove('liked');
     }
   })
 }
