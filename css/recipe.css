@@ -6,3 +6,11 @@
   color: gold;
   border-bottom: 10px;
 }
+
+.star-hovered {
+  color: blue;
+}
+
+.star-clicked {
+  color: green;
+}
