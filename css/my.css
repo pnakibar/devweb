@@ -2,6 +2,20 @@ body {
   padding-top: 70px;
   padding-bottom: 30px;
 }
+
+* {
+  text-shadow: transparent 0px 0px 0px, rgba(0, 0, 0, 0.68) 0px 0px 0px !important;
+}
+
+#upload-file{
+  display: none;
+}
+
+#small-user-icon{
+  width: 32px;
+  height: 32px;
+}
+
 .message-list-container {
     padding-right: 15px;
     padding-left: 15px;
