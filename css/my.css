@@ -11,7 +11,8 @@ body {
   display: none;
 }
 
-#small-user-icon{
+.small-user-icon{
+  display: block;
   width: 32px;
   height: 32px;
 }
