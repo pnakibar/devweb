@@ -56,12 +56,39 @@
 
 .forgot-password {
   float:right; 
-  font-size: 80%; 
+  font-size: 95%; 
   position: relative; 
   top:-10px; 
+  color: white;
+}
+
+.forgot-password:hover {
+  color: white;
 }
 
 body.login {
   padding-top: 40px;
   padding-bottom: 30px;
+}
+
+div.panel-body{
+  padding-top: 20px;
+}
+
+div.input-group{
+  margin-bottom: 25px;
+}
+
+div.form-group{
+  margin-top: 10px;
+}
+
+div.register{
+  border-top: 1px solid#888;
+  padding-top:15px;
+  font-size: 90%;
+}
+
+div#signupbox{
+  display:none;
 }
